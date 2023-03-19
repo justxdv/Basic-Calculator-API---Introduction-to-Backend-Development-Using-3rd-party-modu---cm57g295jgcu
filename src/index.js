@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
+const port = 3000; // Set your desired port number here
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -51,9 +53,6 @@ app.post('/divide', function(req, res){
     const result = num1 / num2;
     res.status(200).json({result: "The division of given two numbers", value: result});
 });
-
-
-
 
 app.listen(port, () => console.log(`App listening on port ${port}!`))
 
